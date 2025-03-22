@@ -1,8 +1,22 @@
 <html>
     <%- include("head", {title: title}) %>
     <body>
-        User: <%= message.user %>
-        Message: <%= message.text %>
-        Added Date: <%= message.added.toLocaleDateString() %>
+        <header>
+            <a href="/" class="back-to-home">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="m313-440 224 224-57 56-320-320 320-320 57 56-224 224h487v80H313Z"/></svg>
+            </a>
+            <h1>User Information</h1>
+        </header>
+        <div class="message-container">
+            <div class="user-info">
+                <span class="title">User:</span> <%= message.user %>
+            </div>
+            <div class="message-info">
+                <span class="title">Message:</span> <%= message.text %>
+            </div>
+            <div class="added-date-info">
+                <span class="title">Added Date:</span> <%= message.added.toLocaleDateString() %>
+            </div>
+        </div>
     </body>
 </html>

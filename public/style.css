@@ -128,3 +128,33 @@ h1 {
 li {
   list-style-type: none;
 }
+
+header {
+  display: flex;
+}
+
+h1 {
+  flex: 1;
+}
+
+a.back-to-home:hover {
+  transform: scale(1.1);
+  transition: transform 0.2s;
+}
+
+.message-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 2rem;
+  cursor: default;
+  font-family: "Paprika", system-ui;
+  font-weight: normal;
+  background: white;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.message-container .title {
+  font-weight: bold;
+}
