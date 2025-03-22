@@ -19,6 +19,10 @@ app.use("/", indexRouter);
 const assetsPath = path.join(__dirname, "public");
 app.use(express.static(assetsPath));
 
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "views/404.html"));
+});
+
 app.use((err, req, res, next) => {
   console.error(err);
   res.status(err.statusCode || 500).send(err.message);

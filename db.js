@@ -22,8 +22,6 @@ async function addMessage(user, text, date) {
 }
 
 async function getMessageById(id) {
-  console.log(id);
-  console.log(messages);
   return messages.find((message) => id === message.id);
 }
 

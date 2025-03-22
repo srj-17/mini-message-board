@@ -158,3 +158,34 @@ a.back-to-home:hover {
 .message-container .title {
   font-weight: bold;
 }
+
+.error-page {
+  cursor: default;
+  color: #3e4954;
+  display: grid;
+}
+
+.error-page svg {
+  fill: #3e4954;
+  width: 20px;
+  height: 20px;
+}
+
+.error-page a {
+  color: #3e4954;
+  display: flex;
+  font-family: "Chewy", system-ui;
+  transform-origin: left;
+}
+
+.error-page h1 {
+  padding: 20px 40px;
+}
+
+.error-page .content {
+  font-size: 1.5rem;
+  font-family: "Chewy", system-ui;
+  display: grid;
+  justify-content: center;
+  text-align: center;
+}
