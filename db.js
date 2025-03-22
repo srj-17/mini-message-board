@@ -21,7 +21,14 @@ async function addMessage(user, text, date) {
   messages.push({ id: crypto.randomUUID(), user, text, added: date });
 }
 
+async function getMessageById(id) {
+  console.log(id);
+  console.log(messages);
+  return messages.find((message) => id === message.id);
+}
+
 module.exports = {
   getMessages,
   addMessage,
+  getMessageById,
 };

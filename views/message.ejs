@@ -2,7 +2,7 @@
     <%- include("head", {title: title}) %>
     <body>
         User: <%= message.user %>
-        Message: <%= message.message %>
-        Added Date: <%= message.date.toLocaleDateString %>
+        Message: <%= message.text %>
+        Added Date: <%= message.added.toLocaleDateString() %>
     </body>
 </html>

@@ -1,10 +1,8 @@
 const { Router } = require("express");
+const getMessage = require("../controllers/messageController");
 
 const messageRouter = Router();
 
-messageRouter.get("/:messageId", (req, res) => {
-  const { messageId } = req.params;
-  console.log(messageId);
-});
+messageRouter.get("/:messageId", getMessage);
 
 module.exports = messageRouter;

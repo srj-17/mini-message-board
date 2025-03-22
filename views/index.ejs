@@ -1,23 +1,25 @@
 <html>
-    <%- include("head", {title: title}) %>
-    <body>
-        <h1>Messages</h1>
-        <a href="/new">Add New Message</a>
-        <ul>
+<%- include("head", {title: title}) %>
+<body>
+    <h1>Message Board</h1>
+    <div class="messages-container">
+        <a class="add-new-message" href="/new">
+            <span class="add-symbol">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"><path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/></svg>
+            </span>
+            Add New Message
+        </a>
+        <ul class="messages">
             <% messages.forEach(message => { %>
                <li>
                    <a href=<%=`/message/${message.id}`%>>
-                       <ul>
-                           <li class="text">
-                               Text: <%= message.text %>
-                           </li>
-                           <li class="user">
-                               User: <%= message.user %>
-                           </li>
-                       </ul>
+                       <li class="text">
+                           "<%= message.text %>" <span class="user">- <%= message.user %></span>
+                       </li>
                    </a>
                </li>
             <% }) %>
         </ul>
-    </body>
+    </div>
+</body>
 </html>
