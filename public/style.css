@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-size: 1rem;
+  font-weight: normal;
+}
+
+body {
+  background: teal;
+}
+
+.new-message-form {
+  display: grid;
+  gap: 20px;
+}
+
+button {
+  padding: 20px 40px;
+}

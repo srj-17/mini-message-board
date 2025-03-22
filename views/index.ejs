@@ -1,0 +1,23 @@
+<html>
+    <%- include("head", {title: title}) %>
+    <body>
+        <h1>Messages</h1>
+        <a href="/new">Add New Message</a>
+        <ul>
+            <% messages.forEach(message => { %>
+               <li>
+                   <a href=<%=`/message/${message.id}`%>>
+                       <ul>
+                           <li class="text">
+                               Text: <%= message.text %>
+                           </li>
+                           <li class="user">
+                               User: <%= message.user %>
+                           </li>
+                       </ul>
+                   </a>
+               </li>
+            <% }) %>
+        </ul>
+    </body>
+</html>

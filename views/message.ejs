@@ -1,0 +1,8 @@
+<html>
+    <%- include("head", {title: title}) %>
+    <body>
+        User: <%= message.user %>
+        Message: <%= message.message %>
+        Added Date: <%= message.date.toLocaleDateString %>
+    </body>
+</html>
