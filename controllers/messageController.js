@@ -1,6 +1,6 @@
 const asyncHandler = require("express-async-handler");
 const CustomNotErrorFound = require("../errors/CustomNotErrorFound");
-const { getMessageById } = require("../db");
+const { getMessageById } = require("../db/queries");
 
 const getMessage = asyncHandler(async (req, res, next) => {
   const { messageId } = req.params;

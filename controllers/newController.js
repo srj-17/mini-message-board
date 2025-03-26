@@ -1,9 +1,10 @@
-const { addMessage } = require("../db");
+const { addMessage } = require("../db/queries");
 
 function getNew(req, res) {
   res.render("form", { title: "New Message" });
 }
 
+// TODO: validate the input
 function postNew(req, res) {
   const user = req.body.user || "Anonymous";
   const message = req.body.message;

@@ -9,13 +9,13 @@
         </header>
         <div class="message-container">
             <div class="user-info">
-                <span class="title">User:</span> <%= message.user %>
+                <span class="title">User:</span> <%= message.username %>
             </div>
             <div class="message-info">
                 <span class="title">Message:</span> <%= message.text %>
             </div>
             <div class="added-date-info">
-                <span class="title">Added Date:</span> <%= message.added.toLocaleDateString() %>
+                <span class="title">Added Date:</span> <%= message.date.toLocaleDateString() %>
             </div>
         </div>
     </body>

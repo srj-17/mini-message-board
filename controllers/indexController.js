@@ -1,9 +1,9 @@
-const db = require("../db");
+const queries = require("../db/queries");
 
 const getIndex = async function (req, res) {
-  const messages = await db.getMessages();
+  const messages = await queries.getMessages();
   if (!messages) {
-    res.send("Sorry! No messages!");
+    return res.send("Sorry! No messages!");
   }
 
   res.render("index", { messages: messages, title: "Mini messageboard" });
