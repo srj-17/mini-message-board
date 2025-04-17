@@ -1,10 +1,10 @@
 const asyncHandler = require("express-async-handler");
 const CustomNotErrorFound = require("../errors/CustomNotErrorFound");
-const { getMessageById } = require("../db/queries");
+const messages = require("../db/queries");
 
 const getMessage = asyncHandler(async (req, res, next) => {
   const { messageId } = req.params;
-  const message = await getMessageById(messageId);
+  const message = await messages.getMessageById(messageId);
   if (!message) {
     throw new CustomNotErrorFound("Couldn't find message with that Id");
   }
