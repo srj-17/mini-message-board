@@ -6,5 +6,6 @@ module.exports = new Pool({
   // with ssl
   ssl: {
     require: true,
+    rejectUnauthorized: false,
   },
 });

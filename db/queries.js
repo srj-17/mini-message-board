@@ -7,30 +7,34 @@ const pool = require("./pool");
  * 3. get message by id
  */
 
-async function getMessages() {
-  // since I'm deconstructing the Result object, I can't
-  // use any names beside rows for deconstructing. If you
-  // want to change names, use aliases instead.
-  const { rows } = await pool.query("SELECT * FROM messages");
-  return rows;
-}
+class Messages {
+  constructor() {
+    this.pool = pool;
+  }
 
-async function addMessage(user, text, date) {
-  await pool.query(
-    `INSERT INTO messages (text, username, date)
+  async getMessages() {
+    // since I'm deconstructing the Result object, I can't
+    // use any names beside rows for deconstructing. If you
+    // want to change names, use aliases instead.
+    const { rows } = await pool.query("SELECT * FROM messages");
+    return rows;
+  }
+
+  async addMessage(user, text, date) {
+    await pool.query(
+      `INSERT INTO messages (text, username, date)
         VALUES ($1, $2, $3)`,
-    [text, user, date],
-  );
+      [text, user, date],
+    );
+  }
+
+  async getMessageById(id) {
+    const { rows } = await pool.query("SELECT * FROM messages WHERE id=$1", [
+      id,
+    ]);
+
+    return rows[0];
+  }
 }
 
-async function getMessageById(id) {
-  const { rows } = await pool.query("SELECT * FROM messages WHERE id=$1", [id]);
-
-  return rows[0];
-}
-
-module.exports = {
-  getMessages,
-  addMessage,
-  getMessageById,
-};
+module.exports = new Messages();

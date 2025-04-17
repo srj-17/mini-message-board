@@ -1,12 +1,12 @@
-const queries = require("../db/queries");
+const messages = require("../db/queries");
 
 const getIndex = async function (req, res) {
-  const messages = await queries.getMessages();
-  if (!messages) {
+  const messageList = await messages.getMessages();
+  if (!messageList) {
     return res.send("Sorry! No messages!");
   }
 
-  res.render("index", { messages: messages, title: "Mini messageboard" });
+  res.render("index", { messages: messageList, title: "Mini messageboard" });
 };
 
 module.exports = {
